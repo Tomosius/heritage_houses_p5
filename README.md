@@ -300,8 +300,17 @@ df.loc[df['GarageYrBlt'] < df['YearBuilt'], 'GarageYrBlt'] = df['YearBuilt']
 ```
 
 ## Hypothesis
-
-* List here your project hypothesis(es) and how you envision validating it (them).
+### Hypothesis 1:
+Based on correlations
+We believe that it is possible to predict building Sale Price based on these features.
+* TotalBsmtSF - By increasing Basement we are increasing SalePrice
+* 1stFlrSF - By increasing 1st floor living area Sale Price tends to increase
+* YearBuilt - By increasing Garage Year Built we are increasing SalePrice, but it looks more exponential after 1980 ish...
+* GarageYrBlt - This is very similar to YearBuilt, maybe because most of the garages were built same date as houses?
+* OverallQual - Overall Quality is most correlated feature from all, and when it increases, SalePrice also increases
+* GrLivArea - Increasing Ground Living Area SalePrice also increases
+* 1stFlrSF - Similar to Ground Living Area, when it goes up, SalePrice also increases
+* GarageArea - When Garage Area goes up, Sale Price also increase. Most of the houses without garages are 150.000 or less
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
