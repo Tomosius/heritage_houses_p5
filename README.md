@@ -300,17 +300,20 @@ df.loc[df['GarageYrBlt'] < df['YearBuilt'], 'GarageYrBlt'] = df['YearBuilt']
 ```
 
 ## Hypothesis
-### Hypothesis 1:
-Based on correlations
-We believe that it is possible to predict building Sale Price based on these features.
-* TotalBsmtSF - By increasing Basement we are increasing SalePrice
-* 1stFlrSF - By increasing 1st floor living area Sale Price tends to increase
-* YearBuilt - By increasing Garage Year Built we are increasing SalePrice, but it looks more exponential after 1980 ish...
-* GarageYrBlt - This is very similar to YearBuilt, maybe because most of the garages were built same date as houses?
+### Hypothesis - 1
+![Top 10 Correlations Image](/src/images/top_10_correlations_hypothesis_1.png "Top 10 Correlations")
+We can make summary after Exploring data and its correlations:
+
+* BsmtFinType1 - With Basement Quality increasing, house price tends to increase, although there is some high prices in Unfinished category
+* KitchenQual - Kitchen Quality is very clear, with its quality going up, price also goes up.
 * OverallQual - Overall Quality is most correlated feature from all, and when it increases, SalePrice also increases
+* BsmtExposure - If There is basement in building, With better exposure price tends to increase
 * GrLivArea - Increasing Ground Living Area SalePrice also increases
+* GarageFinish - Just having garage, price increases, and the more it is Finished, the better house price
 * 1stFlrSF - Similar to Ground Living Area, when it goes up, SalePrice also increases
+* TotalBsmtSF - By increasing Basement we are increasing SalePrice
 * GarageArea - When Garage Area goes up, Sale Price also increase. Most of the houses without garages are 150.000 or less
+* YearBuilt - By increasing Garage Year Built we are increasing SalePrice, but it looks more exponential after 1980 ish...
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
