@@ -324,6 +324,21 @@ We can make summary after Exploring data and its correlations:
   *  'YearBuilt' divide by 1e69
 * Original Values: ['OverallQual', 'GarageArea']
 
+#### Hypothesis 1 Model
+
+I believe that model is not good enough, as mean score after testing is just 0.448.
+Yes Predictions are not so bad scattered across plot, but i do not like such poor performance.
+![Hypothsis 1 results plot](src/images/hypothesis_1_validation.png "Hypothesis 1 results")
+
+
+### Hypothesis 2
+
+After Hypothesis 1 failed with Grand Finale, I believe we need all features to predict prices.
+
+
+
+
+
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
 * List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
