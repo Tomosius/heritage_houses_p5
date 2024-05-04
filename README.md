@@ -315,6 +315,15 @@ We can make summary after Exploring data and its correlations:
 * GarageArea - When Garage Area goes up, Sale Price also increase. Most of the houses without garages are 150.000 or less
 * YearBuilt - By increasing Garage Year Built we are increasing SalePrice, but it looks more exponential after 1980 ish...
 
+#### Hypothesis 1 Feature Engineering
+**Conclusions**
+* Ordinal Encoder: ['BsmtFinType1', 'KitchenQual', 'BsmtExposure', 'GarageFinish']
+* Numerical transformations:
+  * Box Cox: ['GrLivArea', 'YearBuilt', 'SalePrice']
+  * Yeo Johnson: ['1stFlrSF', TotalBsmtSF']
+  *  'YearBuilt' divide by 1e69
+* Original Values: ['OverallQual', 'GarageArea']
+
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
 * List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
