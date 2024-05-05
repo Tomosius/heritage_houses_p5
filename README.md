@@ -331,10 +331,17 @@ Yes Predictions are not so bad scattered across plot, but i do not like such poo
 ![Hypothsis 1 results plot](src/images/hypothesis_1_validation.png "Hypothesis 1 results")
 
 
-### Hypothesis 2
+#### Hypothesis 2 Feature Engineering
+**We need all possible Features from dataset**
+*Yeo Johnson Transformation*: [`1stFlrSF`, `2ndFlrSF`, `BedroomAbcGr`, `BsmtExposure`, `BsmtFinType1`, `GarageFinish`, `LotArea`, `MasVnrArea`, `OpenPorchSF`, `OverallQual`, `TotalBsmtSF`]
+*Log Transformation*: [`GarageYrBlt`, `GrLivArea`, `YearBuilt`, `YearRemodAdd`, `SalePrice`]
+*Box Cox Transformation*: [`LotFrontage`, `OverallCond`]
+*Power Transformation*: [`BsmtFinSF1`, `BsmtUnfSF`, `KitchenQual`] 
+*Discard Features*: [`EnclosedPorch`, `WoodDeckSF`]
 
-After Hypothesis 1 failed with Grand Finale, I believe we need all features to predict prices.
+#### Hypothesis 2 Model
 
+Outcome is slightly better, but results are still not satisfying. just 
 
 
 
