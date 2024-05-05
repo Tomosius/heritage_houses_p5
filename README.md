@@ -341,7 +341,8 @@ Yes Predictions are not so bad scattered across plot, but i do not like such poo
 
 #### Hypothesis 2 Model
 
-Outcome is slightly better, but results are still not satisfying. just 
+Outcome is slightly better, but results are still not satisfying. just 0.606
+![Hypothesis 2 model evaluation](src/images/hypothesis_2_validation.png "Hypothesis 2 validation")
 
 
 
