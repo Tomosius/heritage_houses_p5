@@ -345,6 +345,20 @@ Outcome is slightly better, but results are still not satisfying. just 0.606
 ![Hypothesis 2 model evaluation](src/images/hypothesis_2_validation.png "Hypothesis 2 validation")
 
 
+#### Hypothesis 3
+We need to find more patterns in given data. 
+Experiment Creating new features where Building feature correlates with its quality, etc.
+
+#### Hypothesis 3 Validation
+After exploring New features, we have got a bit more insight in dataset.
+Result has improved to 0.871, what could be satisfactory, but we strive for perfection.
+![Hypothesis 3 model evaluation](/src/images/hypothesis_3_validation.png)
+
+#### Hypothesis 4
+We need to dive more deep into all dataset, try finding all possible patterns of data, create features and see how they correlate.
+Based on that we can start building model
+
+
 
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
