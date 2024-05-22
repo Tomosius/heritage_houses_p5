@@ -442,8 +442,7 @@ I built a model using the following features and transformations:
 - **Original Values:** `['OverallQual', 'GarageArea']`
 
 **Outcome:**
-
-After validating the model, I found that Hypothesis 1 is not correct, as the predictions are not accurate enough (R<sup>2</sup> = 0.448). The scatter plot indicates that while it is possible to predict building value, several properties are spread across the plot, suggesting more nuances in pricing. All features might be needed to determine the real potential value of a building.
+After building model and selecting the best regressor GradientBoostRegressor, Model showed that our Hypothesis is  not accurate enough (R<sup>2</sup> = 0.448). The scatter plot indicates that while it is possible to predict building value, several properties are spread across the plot, suggesting more nuances in pricing. All features might be needed to determine the real potential value of a building.
 
 ![Hypothesis 1 results plot](src/images/hypothesis_1_validation.png "Hypothesis 1 results")
 
