@@ -458,7 +458,7 @@ I believe that to accurately determine a building's value, all features must be 
 
 **Outcome:**
 
-This model performed slightly better (R<sup>2</sup>= 0.606), but still not satisfactorily enough. While the model can predict building prices, some properties remain scattered on the plot, suggesting that building price depends not just on individual features but also on how they interact with each other (e.g., garage size and quality, basement size and finish type, building size and material quality, and overall condition).
+This model performed slightly better (R<sup>2</sup>= 0.609), but still not satisfactorily enough. While the model can predict building prices, some properties remain scattered on the plot, suggesting that building price depends not just on individual features but also on how they interact with each other (e.g., garage size and quality, basement size and finish type, building size and material quality, and overall condition).
 
 ![Hypothesis 2 model evaluation](src/images/hypothesis_2_validation.png "Hypothesis 2 validation")
 
@@ -479,9 +479,7 @@ After exploring New features, we have got a bit more insight in dataset.
 Result has improved to 0.871, what could be satisfactory, but we strive for perfection.
 ![Hypothesis 3 model evaluation](/src/images/hypothesis_3_validation.png)
 
-#### Hypothesis 4
-We need to dive more deep into all dataset, try finding all possible patterns of data, create features and see how they correlate.
-Based on that we can start building model
+
 
 
 
