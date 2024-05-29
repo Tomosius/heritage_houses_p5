@@ -594,17 +594,32 @@ As Requested by customer, our prices prediction are these:
 
 ## Dashboard Design
 
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images,
-  or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for
-  example, at the beginning of the project you were confident you would use a given plot to display an insight, but
-  eventually you needed to use another plot type)
+* Project Summary - Short summary for this Project and Business Requirements
+* Features and Correlations - Displaying and explaining on what features model was built:
+  * Creation of New Features
+  * Displaying Correlation of used features for model with SalePrice
+  * Displaying distribution of all used features against SalePrice
+  * Explanation why certain features were selected
+* Target Predictions:
+  * This page automatically calculates on input data changes
+  * Displays Predicted Price for 1 building based on input
+* Hypothesis and Validation:
+  * Explaining how New Features were created
+  * Displaying selected Features Correlations
+  * Displaying Validation information - scores for Test Set
+* ML Model - This page is based on pipeline, automatically loads dataset, validates and displays results
+* Bulk Predictions:
+  * When page loads automatically calculates and displays Inherited houses input dataset and output dataset
+  * User can select external CSV and upload, results will be displayed
+
+
 
 ## Unfixed Bugs
 
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the
-  frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty
-  understanding implementation is not valid reason to leave bugs unfixed.
+* Still trying to understand PEP formating for Jupyter Notebooks. In examples and training Lessons I was presented with functions which were starting in capital letters, what is against PEP styling. Did my best to use all lower case functions
+* Can not display HistGradientBoosting Regressor Feature Importance - it does not support features selection and does not want to be a good friend to coef_
+* Grammar needs improving
+* Styling of App layout and visualisations - always struggle with any type of styling
 
 ## Deployment
 

@@ -9,7 +9,7 @@ sns.set_style("whitegrid")
 # Define the columns used for predictions
 PREDICTION_COLUMNS = ['YearBuilt', 'GarageYrBlt', 'LotArea', '1stFlrSF', '2ndFlrSF', 'GrLivArea', 'OverallQual', 'OverallCond']
 
-def page_sale_price_predictions_body():
+def page_sale_price_predictions_body_bulk():
     """
     Renders the main body of the house sale price predictions page.
     """
