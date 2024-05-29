@@ -1,2 +1,4 @@
 /venv/
 /temporary/
+/catboost_info/
+.idea
