@@ -1,5 +1,5 @@
 pandas==1.5.3
-# ydata-profiling==4.7.0
+ydata-profiling==4.7.0
 numba==0.58.1
 seaborn==0.12.2
 matplotlib==3.8.4
@@ -18,3 +18,5 @@ catboost==1.2.5
 tabulate==0.9.0
 streamlit==0.85.0
 protobuf==3.20.3
+altair==4.0.1
+joblib==1.4.2
