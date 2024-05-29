@@ -1,9 +1,8 @@
-import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 import pandas as pd
 from custom_transformers import DatasetCleaner
-from file_management import load_house_data, load_pkl_file, load_inherited_house_data
+from file_management import load_house_data, load_pkl_file
 
 # Set seaborn style for plots
 sns.set_style("whitegrid")
@@ -26,16 +25,19 @@ rating_text = {
     1: "Very Poor",
 }
 
+
 def page_sale_price_predictions_body():
     """
     Renders the main body of the house sale price predictions page.
     """
     # List of variables used for correlation analysis and predictions
-    corr_var_list = ['YearBuilt', 'GarageYrBlt', 'LotArea', '1stFlrSF', '2ndFlrSF', 'GrLivArea', 'OverallQual', 'OverallCond']
+    corr_var_list = ['YearBuilt', 'GarageYrBlt', 'LotArea', '1stFlrSF', '2ndFlrSF', 'GrLivArea', 'OverallQual',
+                     'OverallCond']
 
     st.write("### House Sale Price Predictions")
     st.info(
-        "The society wants to predict the potential historical value for several historical houses, including their own properties and other significant houses in **Iowa**. "
+        "The society wants to predict the potential historical value for several historical houses, including their "
+        "own properties and other significant houses in **Iowa**."
         "These predictions will help determine their value and guide decisions about the buildings' future."
     )
 
@@ -43,13 +45,14 @@ def page_sale_price_predictions_body():
     input_data = input_data_widgets(corr_var_list)
     model_pipeline = load_pkl_file()
 
-    if st.button("Predict"):
-        try:
-            price_prediction = model_pipeline.predict(input_data)
-            # Display the prediction as a single value
-            st.write(f"Predicted price for your house is ${price_prediction[0]:,.2f}")
-        except Exception as e:
-            st.error(f"Error making prediction: {e}")
+    # Automatically predict based on current input data
+    try:
+        auto_prediction = model_pipeline.predict(input_data)
+        # Display the automatic prediction as a single value
+        st.write(f"Based on current data input, the predicted SalePrice is ${auto_prediction[0]:,.2f}")
+    except Exception as e:
+        st.error(f"Error making automatic prediction: {e}")
+
 
 def input_data_widgets(corr_var_list):
     """
@@ -141,6 +144,7 @@ def input_data_widgets(corr_var_list):
 
     return input_data
 
+
 def handle_year_built_warning(year_built, placeholder):
     """
     Handles warnings for the YearBuilt feature based on its value.
@@ -156,6 +160,7 @@ def handle_year_built_warning(year_built, placeholder):
         )
     else:
         placeholder.empty()
+
 
 def handle_garage_year_warning(garage_year, input_data, placeholder):
     """
@@ -178,6 +183,7 @@ def handle_garage_year_warning(garage_year, input_data, placeholder):
     else:
         placeholder.empty()
 
+
 def handle_floor_area_warnings(input_data, placeholder):
     """
     Handles warnings for floor area features based on their values.
@@ -197,6 +203,7 @@ def handle_floor_area_warnings(input_data, placeholder):
     else:
         placeholder.empty()
 
+
 def handle_negative_value_warnings(input_data, placeholder):
     """
     Handles warnings for negative values in the input data.
@@ -210,6 +217,7 @@ def handle_negative_value_warnings(input_data, placeholder):
         placeholder.warning("All values must be non-negative.")
     else:
         placeholder.empty()
+
 
 if __name__ == "__main__":
     page_sale_price_predictions_body()
