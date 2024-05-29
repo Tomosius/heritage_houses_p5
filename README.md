@@ -1,5 +1,55 @@
 # Heritage House Sale Price Prediction
 
+![Website_Mokup](src/images/mokup.png)
+
+
+<!-- TOC -->
+* [Heritage House Sale Price Prediction](#heritage-house-sale-price-prediction)
+  * [Dataset Content](#dataset-content)
+  * [CRISP-DM Methodology](#crisp-dm-methodology)
+  * [Business Requirements](#business-requirements)
+    * [Business Objectives:](#business-objectives)
+    * [Specific Requirements:](#specific-requirements)
+  * [Dataset Information](#dataset-information)
+  * [Data Cleaning](#data-cleaning)
+    * [Floors](#floors)
+    * [Bedrooms](#bedrooms)
+    * [Basement](#basement)
+    * [Garages](#garages)
+    * [Kitchen](#kitchen)
+    * [Lot and it's all features](#lot-and-its-all-features)
+    * [Masonry and Porch](#masonry-and-porch)
+    * [Condition, Quality, Wood deck](#condition-quality-wood-deck)
+    * [Cleaning Outcome](#cleaning-outcome)
+  * [Modeling and evaluation](#modeling-and-evaluation)
+    * [Hypothesis 1](#hypothesis-1)
+      * [Model Building and Feature Transformations for Hypothesis 1](#model-building-and-feature-transformations-for-hypothesis-1)
+    * [Hypothesis 2 - Feature Engineering](#hypothesis-2---feature-engineering)
+    * [Hypothesis 3](#hypothesis-3)
+      * [Hypothesis 3](#hypothesis-3-1)
+      * [Hypothesis 3 Validation](#hypothesis-3-validation)
+  * [The rationale to map the business requirements to the Data Visualisations and ML tasks](#the-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
+    * [New Features (NF) Calculations and Explanations](#new-features-nf-calculations-and-explanations)
+    * [Sale Price Prediction](#sale-price-prediction)
+  * [Dashboard Design](#dashboard-design)
+  * [Unfixed Bugs](#unfixed-bugs)
+  * [Deployment](#deployment)
+    * [Heroku](#heroku)
+  * [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+    * [Data Profiling and Evaluation](#data-profiling-and-evaluation)
+    * [Statistical Analysis](#statistical-analysis)
+    * [Data Encoding and Transformation](#data-encoding-and-transformation)
+    * [Machine Learning with Scikit-Learn](#machine-learning-with-scikit-learn)
+    * [Feature Engineering](#feature-engineering)
+    * [Gradient Boosting and Other Regressors](#gradient-boosting-and-other-regressors)
+    * [Visualization](#visualization)
+  * [Credits](#credits)
+  * [Content](#content)
+  * [Media](#media)
+  * [Acknowledgements (optional)](#acknowledgements-optional)
+<!-- TOC -->
+
+
 I have built an app, based on Machine Learning and Data Analysis, to Predict Heritage House Sale Price.
 Project is based on Code Institute Milestone options, what helped a lot, and I was supplied with:
 
@@ -59,21 +109,11 @@ phases:
 2. [Data Understanding](#dataset-information)
 3. [Data Preparation](#data-cleaning)
 4. [Modeling and Evaluation](#modeling-and-evaluation)
-5. [Business Requirements](#ml-business-case)
-5. [Deployment](#deployment)
+5. [Business Requirements](#business-requirements)
+6. [Deployment](#deployment)
 
-### 5. Deployment
 
-The final phase is deploying the model into a production environment. This involves:
-
-- Planning deployment: creating a deployment strategy.
-- Monitoring and maintenance: setting up processes to monitor the model's performance and maintain it.
-- Documenting: ensuring all steps, decisions, and findings are documented for future reference.
-
-By following the CRISP-DM methodology, the heritage housing project ensures a systematic and thorough approach to
-solving the business problem, leading to reliable and actionable insights.
-
-## [Business Requirements]
+## Business Requirements
 
 I was requested by a local heritage society to assist in maximizing the preservation and restoration value of historical
 houses located in **Iowa**. The society aims to ensure that these culturally significant properties are well-preserved
@@ -457,7 +497,7 @@ After exploring the dataset, I have arrived at the following conclusions:
 Summary of data exploration and correlations:
 ![Top 10 Correlations Image](/src/images/top_10_correlations_hypothesis_1.png "Top 10 Correlations")
 
-### Model Building and Feature Transformations for Hypothesis 1
+#### Model Building and Feature Transformations for Hypothesis 1
 
 I built a model using the following features and transformations:
 
@@ -582,42 +622,40 @@ Selected Features distribution against Sale Price
 
 As Requested by customer, our prices prediction are these:
 
-|   YearBuilt |   GarageYrBlt |   LotArea |   1stFlrSF |   2ndFlrSF |   GrLivArea |   OverallQual |   OverallCond |   SalePrice |
-|------------:|--------------:|----------:|-----------:|-----------:|------------:|--------------:|--------------:|------------:|
-|        1961 |          1961 |     11622 |        896 |          0 |         896 |             5 |             6 |      124293 |
-|        1958 |          1958 |     14267 |       1329 |          0 |        1329 |             6 |             6 |      162743 |
-|        1997 |          1997 |     13830 |        928 |        701 |        1629 |             5 |             5 |      170909 |
-|        1998 |          1998 |      9978 |        926 |        678 |        1604 |             6 |             6 |      187232 |
-
-
-
+| YearBuilt | GarageYrBlt | LotArea | 1stFlrSF | 2ndFlrSF | GrLivArea | OverallQual | OverallCond | SalePrice |
+|----------:|------------:|--------:|---------:|---------:|----------:|------------:|------------:|----------:|
+|      1961 |        1961 |   11622 |      896 |        0 |       896 |           5 |           6 |    124293 |
+|      1958 |        1958 |   14267 |     1329 |        0 |      1329 |           6 |           6 |    162743 |
+|      1997 |        1997 |   13830 |      928 |      701 |      1629 |           5 |           5 |    170909 |
+|      1998 |        1998 |    9978 |      926 |      678 |      1604 |           6 |           6 |    187232 |
 
 ## Dashboard Design
 
 * Project Summary - Short summary for this Project and Business Requirements
 * Features and Correlations - Displaying and explaining on what features model was built:
-  * Creation of New Features
-  * Displaying Correlation of used features for model with SalePrice
-  * Displaying distribution of all used features against SalePrice
-  * Explanation why certain features were selected
+    * Creation of New Features
+    * Displaying Correlation of used features for model with SalePrice
+    * Displaying distribution of all used features against SalePrice
+    * Explanation why certain features were selected
 * Target Predictions:
-  * This page automatically calculates on input data changes
-  * Displays Predicted Price for 1 building based on input
+    * This page automatically calculates on input data changes
+    * Displays Predicted Price for 1 building based on input
 * Hypothesis and Validation:
-  * Explaining how New Features were created
-  * Displaying selected Features Correlations
-  * Displaying Validation information - scores for Test Set
+    * Explaining how New Features were created
+    * Displaying selected Features Correlations
+    * Displaying Validation information - scores for Test Set
 * ML Model - This page is based on pipeline, automatically loads dataset, validates and displays results
 * Bulk Predictions:
-  * When page loads automatically calculates and displays Inherited houses input dataset and output dataset
-  * User can select external CSV and upload, results will be displayed
-
-
+    * When page loads automatically calculates and displays Inherited houses input dataset and output dataset
+    * User can select external CSV and upload, results will be displayed
 
 ## Unfixed Bugs
 
-* Still trying to understand PEP formating for Jupyter Notebooks. In examples and training Lessons I was presented with functions which were starting in capital letters, what is against PEP styling. Did my best to use all lower case functions
-* Can not display HistGradientBoosting Regressor Feature Importance - it does not support features selection and does not want to be a good friend to coef_
+* Still trying to understand PEP formating for Jupyter Notebooks. In examples and training Lessons I was presented with
+  functions which were starting in capital letters, what is against PEP styling. Did my best to use all lower case
+  functions
+* Can not display HistGradientBoosting Regressor Feature Importance - it does not support features selection and does
+  not want to be a good friend to coef_
 * Grammar needs improving
 * Styling of App layout and visualisations - always struggle with any type of styling
 
@@ -625,7 +663,7 @@ As Requested by customer, our prices prediction are these:
 
 ### Heroku
 
-* The App live link is: <https://YOUR_APP_NAME.herokuapp.com/>
+* The App live link is: <https://heritage-houses-ce5e2ad82147.herokuapp.com>
 * Set the runtime.txt Python version to
   a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported
   version.
@@ -634,14 +672,153 @@ As Requested by customer, our prices prediction are these:
 1. Log in to Heroku and create an App
 2. At the Deployment tab, select GitHub as the deployment method.
 3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App
-   on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+4. Select the main branch, then click Deploy Branch.
+5. If Slug is too big, I personally recommend muting part of requirements.txt (just add # in front of it). In this case
+   I muted all requirements except:
+
+```python
+pandas == 1.5.3
+matplotlib == 3.8.4
+scikit - learn == 1.5.0
+numpy == 1.26.4
+fastparquet == 2024.5.0
+feature - engine == 1.6.2
+category - encoders == 2.6.3
+catboost == 1.2.5
+tabulate == 0.9.0
+streamlit == 0.85.0
+protobuf == 3.20.3
+altair == 4.0.1
+joblib == 1.4.2
+seaborn == 0.12.2
+Jinja2 == 3.1.4
+MarkupSafe == 2.1.5
+```
+
+This helped to reduce slug size. After Deployment is complete, you can "unmute" requirements for project.
 
 ## Main Data Analysis and Machine Learning Libraries
 
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+### Data Profiling and Evaluation
+
+* **ydata-profiling**
+    - Used for generating detailed reports on the dataset, providing insights into data distribution, missing values,
+      and correlations.
+    - Example:
+      ```python
+      profile = ProfileReport(df, title="Pandas Profiling Report")
+      ```
+
+* **ppscore**
+    - Predictive Power Score (PPS) is used to assess the predictive power of features in the dataset.
+    - Example:
+      ```python
+      pps.score(df, "feature1", "feature2")
+      ```
+
+### Statistical Analysis
+
+* **gap-stat**
+    - Implements the gap statistic for determining the optimal number of clusters.
+    - Example:
+      ```python
+      optimal_k = gap_stat(data)
+      ```
+
+* **scipy**
+    - A fundamental library for scientific computing, used for various statistical tests and mathematical functions.
+    - Example:
+      ```python
+      from scipy.stats import ttest_ind
+      ```
+
+### Data Encoding and Transformation
+
+* **category-encoders**
+    - Used for encoding categorical variables into numeric formats that machine learning models can utilize.
+    - Example:
+      ```python
+      encoder = ce.OneHotEncoder(cols=['category1', 'category2'])
+      ```
+
+### Machine Learning with Scikit-Learn
+
+* **sklearn**
+    - Core library for building and evaluating machine learning models.
+    - **Pipeline**: Streamlines the creation of complex workflows.
+        - Example:
+          ```python
+          Pipeline([('scaler', StandardScaler()), ('model', LinearRegression())])
+          ```
+    - **BaseEstimator** and **TransformerMixin**: Base classes for creating custom transformers.
+    - **is_regressor**: Utility function to check if an estimator is a regressor.
+    - **TransformedTargetRegressor**: Applies transformations to the target variable.
+    - **SelectFromModel**: Feature selection based on importance weights.
+    - **Various Regressors**: Different regression models to cater to different types of data and problem requirements.
+        - Example:
+          ```python
+          from sklearn.linear_model import LinearRegression
+          ```
+    - **OrdinalEncoder**: Encodes categorical features as ordinal integers.
+        - Example:
+          ```python
+          encoder = OrdinalEncoder()
+          ```
+
+### Feature Engineering
+
+* **feature-engine**
+    - Provides transformers for feature engineering tasks.
+    - **YeoJohnsonTransformer**: Applies Yeo-Johnson transformation to make data more Gaussian-like.
+    - **BoxCoxTransformer**: Similar to YeoJohnson but for positive data only.
+    - **PowerTransformer**: Applies power transformations.
+    - **Winsorizer**: Reduces the influence of outliers.
+    - **StandardScaler**: Standardizes features by removing the mean and scaling to unit variance.
+    - **RelativeFeatures**: Creates new features based on the relative differences.
+    - **SmartCorrelatedSelection**: Selects features based on correlation and predictive power.
+    - Example:
+      ```python
+      pipeline = Pipeline([('yeo_johnson', YeoJohnsonTransformer()), ('scaler', StandardScaler())])
+      ```
+
+### Gradient Boosting and Other Regressors
+
+* **XGBoost**
+    - A powerful gradient boosting framework optimized for speed and performance.
+    - Example:
+      ```python
+      from xgboost import XGBRegressor
+      ```
+
+* **LGBMRegressor**
+    - LightGBM, another gradient boosting framework designed for efficiency and scalability.
+    - Example:
+      ```python
+      from lightgbm import LGBMRegressor
+      ```
+
+* **CatBoostRegressor**
+    - Gradient boosting with categorical feature support.
+    - Example:
+      ```python
+      from catboost import CatBoostRegressor
+      ```
+
+* **PLSRegressor**
+    - Partial Least Squares regression, useful for datasets with multicollinearity.
+    - Example:
+      ```python
+      from sklearn.cross_decomposition import PLSRegression
+      ```
+
+### Visualization
+
+* **matplotlib**
+    - Fundamental library for creating static, animated, and interactive visualizations in Python.
+    - Example:
+      ```python
+      import matplotlib.pyplot as plt
+      ```
 
 ## Credits
 
@@ -650,21 +827,21 @@ As Requested by customer, our prices prediction are these:
   avoid plagiarism.
 * You can break the credits section up into Content and Media, depending on what you have included in your project.
 
-### Content
+## Content
 
-* The text for the Home page was taken from Wikipedia Article A
-* Instructions on how to implement form validation on the Sign-Up page was taken
-  from [Specific YouTube Tutorial](https://www.youtube.com/)
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+* Business Case was Provided by CodeInstitute
+* Dataset was also Provided by Code Institute
+* A lot of Official Documentation
+* ChatGPT for generating part of documentation, fixing grammar mistakes
 
-### Media
+## Media
 
-* The photos used on the home and sign-up page are from This Open Source site
-* The images used for the gallery page were taken from this other open-source site
+* The images used for this project were generated inside of this Project
 
 ## Acknowledgements (optional)
 
-* In case you would like to thank the people that provided support through this project.
+* Tutor and all Code Institute
+* My Partner, who was so patient with me
 
 
 
