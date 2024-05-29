@@ -20,3 +20,4 @@ streamlit==0.85.0
 protobuf==3.20.3
 altair==4.0.1
 joblib==1.4.2
+seaborn==0.12.2
